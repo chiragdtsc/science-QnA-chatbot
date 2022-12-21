@@ -50,4 +50,4 @@ class DataProcessing:
         for sentence in self.cleaned_sentences:
             print(sentence)
             sent_bertphrase_embeddings.append(SBERT_MODEL.encode([sentence]))
-        np.save('knowledge_base_embeddings.npy', sent_bertphrase_embeddings)
+        np.save('data/knowledge_base_embeddings.npy', sent_bertphrase_embeddings)
