@@ -1,0 +1,9 @@
+requests
+pandas
+numpy
+sklearn
+gensim
+transformers
+sentence-transformers
+beautifulsoup4
+spacy
