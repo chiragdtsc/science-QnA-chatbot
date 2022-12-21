@@ -33,7 +33,7 @@ class DataProcessing:
     def retrieve_answer(self, question):
         question = self.clean_sentence(question, stopwords=False)
         question_embedding = SBERT_MODEL.encode([question])
-        sentence_embeddings = np.load('data/knowledge_base_embeddings.npy')
+        sentence_embeddings = zarr.load('data/knowledge_base_embeddings.zarr')
         max_sim=-1
         index_sim=-1
         for index,faq_embedding in enumerate(sentence_embeddings):
@@ -50,4 +50,4 @@ class DataProcessing:
         for sentence in self.cleaned_sentences:
             print(sentence)
             sent_bertphrase_embeddings.append(SBERT_MODEL.encode([sentence]))
-        np.save('data/knowledge_base_embeddings.npy', sent_bertphrase_embeddings)
+        zarr.save('data/knowledge_base_embeddings.zarr', sent_bertphrase_embeddings)
