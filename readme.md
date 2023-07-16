@@ -9,7 +9,7 @@ Adding logic to the `main.py` file inside the `execute` function.
 def execute(request: SimpleText, ray: OpenfabricExecutionRay) -> SimpleText:
     output = []
     for text in request.text:        
-        response = '' # <<< --Your magic goes here
+        response = '' # <<< -- Logic goes here
         output.append(response)
 
     return SimpleText(dict(text=output))
